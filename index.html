@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Официальное приглашение 💌</title>
+  <title>For my Queen 💌</title>
 
   <style>
     * {
@@ -16,75 +16,81 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
       font-family: Georgia, serif;
       color: white;
-      overflow: hidden;
 
       background:
-        linear-gradient(rgba(10, 18, 25, 0.55), rgba(5, 10, 15, 0.8)),
+        linear-gradient(rgba(10,18,25,.55), rgba(5,10,15,.82)),
         url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=85")
         center / cover no-repeat;
     }
 
     .card {
-      width: 90%;
+      width: 100%;
       max-width: 520px;
-      padding: 40px 28px;
+      padding: 38px 28px;
       text-align: center;
-      background: rgba(20, 25, 28, 0.72);
+
+      background: rgba(20,25,28,.72);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.2);
+
+      border: 1px solid rgba(255,255,255,.2);
       border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
     }
 
     .heart {
-      font-size: 45px;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 28px;
-      margin: 5px 0 25px;
-      letter-spacing: 1px;
+      font-size: 29px;
+      margin: 5px 0 28px;
     }
 
-    h2 {
-      font-size: 25px;
-      margin: 10px 0 20px;
+    .dear {
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+    .date-question {
+      font-size: 23px;
+      margin: 10px 0 28px;
     }
 
     .date {
-      margin: 25px 0;
       font-size: 18px;
       line-height: 2;
+      margin-bottom: 28px;
     }
 
     .question {
-      margin-top: 30px;
       font-size: 21px;
       font-weight: bold;
+      margin-bottom: 24px;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin-top: 25px;
     }
 
     button {
-      border: none;
-      padding: 16px 25px;
+      padding: 16px 20px;
       border-radius: 50px;
+      border: none;
+      font-family: Georgia, serif;
       font-size: 17px;
       cursor: pointer;
-      transition: 0.25s;
-      font-family: inherit;
+      transition: .25s;
+    }
+
+    button:hover {
+      transform: scale(1.04);
     }
 
     .yes {
@@ -92,31 +98,17 @@
       color: #381d28;
     }
 
-    .yes:hover {
-      transform: scale(1.05);
-    }
-
-    .maybe {
-      background: rgba(255,255,255,0.15);
+    .no {
+      background: rgba(255,255,255,.14);
       color: white;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-
-    .maybe:hover {
-      transform: scale(1.03);
+      border: 1px solid rgba(255,255,255,.3);
     }
 
     #answer {
       display: none;
       margin-top: 25px;
-      font-size: 22px;
+      font-size: 21px;
       line-height: 1.5;
-    }
-
-    .small {
-      font-size: 14px;
-      opacity: 0.65;
-      margin-top: 25px;
     }
   </style>
 </head>
@@ -127,15 +119,15 @@
 
     <div class="heart">💌</div>
 
-    <h1>ОФИЦИАЛЬНОЕ ПРИГЛАШЕНИЕ</h1>
+    <h1>For my Queen!</h1>
 
-    <h2>Queen ❤️</h2>
+    <div class="dear">
+      Dear baby girl!
+    </div>
 
-    <p><b>Dear baby girl!</b></p>
-
-    <p>Date with me?</p>
-
-    <h2>✨ СВИДАНИЕ ✨</h2>
+    <div class="date-question">
+      Date with me?
+    </div>
 
     <div class="date">
       📅 <b>Дата:</b> 20 September 2026<br>
@@ -149,35 +141,37 @@
 
     <div class="buttons">
       <button class="yes" onclick="yesAnswer()">
-        💗 ДА, КОНЕЧНО
+        💗 ДА, МАЛЫШ
       </button>
 
-      <button class="maybe" onclick="maybeAnswer()">
-        🙈 НУ Я ПОДУМАЮ
+      <button class="no" onclick="noAnswer()">
+        🙈 НЕТ, СПОКОЙНОЙ НОЧИ
       </button>
     </div>
 
     <div id="answer"></div>
 
-    <div class="small">
-      *Место встречи будет раскрыто позже 🤫
-    </div>
-
   </div>
 
   <script>
     function yesAnswer() {
-      document.getElementById("answer").style.display = "block";
-      document.getElementById("answer").innerHTML =
-        "🥰 Отлично! Тогда свидание официально состоится! ❤️<br><br>До встречи 20 сентября 💌";
+      const answer = document.getElementById("answer");
+
+      answer.style.display = "block";
+      answer.innerHTML =
+        "💗 Тогда всё решено... жду тебя 20 сентября ❤️";
 
       document.querySelector(".buttons").style.display = "none";
     }
 
-    function maybeAnswer() {
-      document.getElementById("answer").style.display = "block";
-      document.getElementById("answer").innerHTML =
-        "🙈 Хорошо... но имей в виду — приглашение очень заманчивое 😏❤️";
+    function noAnswer() {
+      const answer = document.getElementById("answer");
+
+      answer.style.display = "block";
+      answer.innerHTML =
+        "🌙 Спокойной ночи, Queen...";
+
+      document.querySelector(".buttons").style.display = "none";
     }
   </script>
 
